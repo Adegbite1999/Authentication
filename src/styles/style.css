@@ -1,0 +1,96 @@
+.wrapper {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  width: 350px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+form {
+  width: 100%;
+  border: 1px solid #bdbdbd;
+  border-radius: 24px;
+  padding: 3rem;
+}
+
+.form__text--intro {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+  color: #333333;
+  white-space: pre-wrap;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.form__text--sub {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  color: #333333;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.input__field--email {
+  margin-bottom: 1rem;
+}
+.input__field--password {
+  margin-bottom: 2rem;
+}
+input {
+  width: 100%;
+  outline: none;
+  padding: 1.5rem 1.5rem 1rem 3.5rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+}
+input::placeholder {
+  font-size: 1.6rem;
+  line-height: 2.1;
+  font-weight: 400;
+}
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: none;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  font-weight: 600;
+  background: #2f80ed;
+  color: #fff;
+}
+.social__login {
+  text-align: center;
+  margin-top: 1rem;
+}
+.social__login--icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+.social__caption--intro {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: #828282;
+}
+.social__caption--sub {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  line-height: 1.9rem;
+  color: #828282;
+}
+.icon {
+  cursor: pointer;
+}
+.input__icon {
+  position: relative;
+  top: 3.5rem;
+  left: 0.75rem;
+}
