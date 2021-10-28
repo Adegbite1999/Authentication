@@ -24,7 +24,7 @@ function Login() {
                     <label htmlFor="password"></label>
                     <span className="input__icon"><BiLock size={20} color="#828282" /></span>  <input id="password" type="password" placeholder='Password' />
                 </div>
-                <button>Start coding now</button>
+                <button className="btn__action">Start coding now</button>
 
                 <div className="social__login">
                     <p className="social__caption--intro">Or login with these social profile</p>

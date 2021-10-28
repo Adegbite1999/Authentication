@@ -6,6 +6,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import { GrGroup } from 'react-icons/gr';
 import { MdLogout } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import Profile from './Profile';
 
 function UserIndex() {
     const [show, setShow] = useState(false)
@@ -43,9 +44,8 @@ function UserIndex() {
                         </div>
                     </div>
                 </header>
-
-
             </section>
+            <Profile/>
         </div>
     )
 }

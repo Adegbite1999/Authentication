@@ -26,7 +26,7 @@ function Index() {
                     <span className="input__icon"><BiLock size={20} color="#828282" /></span>  <input id="password" type="password" placeholder='Password' />
                 </div>
                 <Link to="/user/index">
-                <button>Start coding now </button>
+                <button className="btn__action">Start coding now </button>
                 </Link>
 
                 <div className="social__login">

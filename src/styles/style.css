@@ -54,7 +54,7 @@ input:focus {
   outline: none;
 }
 
-button {
+.btn__action {
   width: 100%;
   margin-bottom: 1rem;
   padding: 0.75rem;
@@ -111,7 +111,7 @@ button {
 .user__wrapper {
   background: #fafafb;
   width: 100vw;
-  min-height: 100vh;
+  height: 100vh;
 }
 .header__user {
   display: flex;
@@ -130,6 +130,7 @@ button {
   display: flex;
   align-items: center;
   margin-left: 0.5rem;
+  cursor: pointer;
   /* position: relative; */
 }
 nav {
@@ -157,4 +158,75 @@ li:hover {
 }
 .link {
   text-decoration: none;
+}
+.username {
+  color: #333333;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.6rem;
+}
+
+.profile__container {
+  color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  height: 48rem;
+  /* margin: 0 1.5rem 0 1.5rem;  @mobile screens */
+  max-width: 100%;
+}
+
+.profile__wrapper {
+  max-width: 80rem;
+  margin: 0rem auto;
+}
+.btn__profile {
+  padding: 0 2rem 0 2rem;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid #828282;
+  border-radius: 12px;
+  color: #828282;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  font-weight: 500;
+}
+
+.profile__intro--text {
+  text-align: center;
+  margin-bottom: 1.75rem;
+}
+
+.profile__intro--text > h5 {
+  color: #000000;
+  font-size: 3.6rem;
+  line-height: 4.9rem;
+  font-weight: 400;
+}
+
+.profile__intro--text > p {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  color: #000000;
+  font-weight: 300;
+}
+.profile__header--box {
+  /* padding: 1.5rem; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem;
+  border-bottom: 1px solid #d3d3d3;
+}
+.profile {
+  color: #000000;
+  font-size: 2.4rem;
+  line-height: 3.3rem;
+  font-weight: 400;
+}
+.profile__sub {
+  color: #828282;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.8rem;
 }
