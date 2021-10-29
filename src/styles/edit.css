@@ -1,0 +1,105 @@
+/* Profile Edit */
+.profile__edit-wrapper {
+  max-width: 80rem;
+  margin: 0rem auto;
+}
+
+.edit__profile--intro {
+  color: #000000;
+  margin-bottom: 1.75rem;
+}
+.edit__profile--intro > h5 {
+  color: #000000;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+}
+.edit__profile--intro > p {
+  color: #828282;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-weight: 500;
+}
+.user--action {
+  color: #828282;
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.profile__container--edit {
+  color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  height: 56rem;
+  max-width: 100%;
+  padding: 2.5rem;
+}
+
+.form__user {
+  display: grid;
+  grid-template-columns: 300px;
+}
+.form__edit {
+  width: 100%;
+  outline: none;
+  padding: 1rem;
+  border: 1px solid #bdbdbd;
+  background: #fafafb;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.form__edit::placeholder {
+  color: #bdbdbd;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+.user__box {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+.edit__wrapper {
+  background: #fafafb;
+  width: 100vw;
+  height: 100vh;
+}
+.textarea {
+  width: 100%;
+  outline: none;
+  padding: 1rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  background: #fafafb;
+  margin-bottom: 1rem;
+}
+.textarea::placeholder {
+  color: #bdbdbd;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.edit__btn--action {
+  width: 20%;
+  border: none;
+  color: #fff;
+  background: #2f80ed;
+  padding: 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* label {
+  color: #4f4f4f;
+} */
+.arrow__back{
+  margin-bottom: 1rem;
+}

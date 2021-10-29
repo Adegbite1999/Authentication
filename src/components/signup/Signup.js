@@ -8,10 +8,11 @@ import twitter from 'assets/Twitter.svg';
 import github from 'assets/Gihub.svg';
 import { BiLock } from 'react-icons/bi';
 import { HiOutlineMail } from 'react-icons/hi';
+import FormInput from 'Input/Input';
 function Index() {
     return (
         <div className="wrapper">
-            <form>
+            <form className="form">
                 <div>
                     <img src={logo} alt="devchallenge-logo" />
                 </div>
@@ -19,14 +20,28 @@ function Index() {
                 <p className="form__text--sub">Master web development by building real-life projects. There are multiple part for you to choose</p>
                 <div className="input__field--email input">
                     <label htmlFor="email"></label>
-                    <span className="input__icon"><HiOutlineMail size={20} color="#828282" /></span>  <input id="password" type="email" placeholder='Email' />
+                    <span className="input__icon"><HiOutlineMail size={20} color="#828282" /></span>
+                    <FormInput
+                        className="input__fields"
+                        id="email"
+                        type="email"
+                        placeholder='Email'
+                    />
+
                 </div>
                 <div className="input__field--password input">
                     <label htmlFor="password"></label>
-                    <span className="input__icon"><BiLock size={20} color="#828282" /></span>  <input id="password" type="password" placeholder='Password' />
+                    <span className="input__icon"><BiLock size={20} color="#828282" /></span>
+                    <FormInput
+                        className="input__fields"
+                        id="password"
+                        type="password"
+                        placeholder='Password'
+
+                    />
                 </div>
-                <Link to="/user/index">
-                <button className="btn__action">Start coding now </button>
+                <Link to="/user/profile">
+                    <button className="btn__action">Start coding now </button>
                 </Link>
 
                 <div className="social__login">

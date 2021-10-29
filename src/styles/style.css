@@ -8,7 +8,7 @@
   padding-right: 1rem;
 }
 
-form {
+.form {
   width: 100%;
   border: 1px solid #bdbdbd;
   border-radius: 24px;
@@ -38,7 +38,7 @@ form {
 .input__field--password {
   margin-bottom: 2rem;
 }
-input {
+.input__fields {
   width: 100%;
   outline: none;
   padding: 1.5rem 1.5rem 1rem 3.5rem;
@@ -94,7 +94,10 @@ input:focus {
   top: 3.5rem;
   left: 0.75rem;
 }
-
+.link {
+  text-decoration: none;
+  color: #828282;
+}
 /* User Page Index */
 .user__image {
   width: 32px;
@@ -103,11 +106,17 @@ input:focus {
   overflow: hidden;
   margin-right: 0.75rem;
 }
+/* Give image full width and height for responsive styling */
 .img {
   max-width: 100%;
   height: 100%;
 }
-
+.user__profile--image {
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 8px;
+}
 .user__wrapper {
   background: #fafafb;
   width: 100vw;
@@ -170,7 +179,7 @@ li:hover {
   color: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 12px;
-  height: 48rem;
+  min-height: 40rem;
   /* margin: 0 1.5rem 0 1.5rem;  @mobile screens */
   max-width: 100%;
 }
@@ -178,6 +187,7 @@ li:hover {
 .profile__wrapper {
   max-width: 80rem;
   margin: 0rem auto;
+  /* on mobile screens add padding left and right to be 2rem */
 }
 .btn__profile {
   padding: 0 2rem 0 2rem;
@@ -211,11 +221,11 @@ li:hover {
   font-weight: 300;
 }
 .profile__header--box {
-  /* padding: 1.5rem; */
+  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem;
+  /* padding: 2rem; */
   border-bottom: 1px solid #d3d3d3;
 }
 .profile {
@@ -230,3 +240,51 @@ li:hover {
   font-weight: 500;
   line-height: 1.8rem;
 }
+
+/* */
+.profile__header--photo {
+  /* display: flex;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: space-between; */
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  align-items: center;
+  padding: 1rem;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #d3d3d3;
+}
+.photo__sub {
+  font-size: 1.3rem;
+  line-height: 1.7rem;
+  font-weight: 500;
+  color: #bdbdbd;
+  text-transform: uppercase;
+}
+.user__sub {
+  font-size: 1.8rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+/* Profile page on mobile */
+
+/* .header__user {
+  padding: 1rem 2rem 0 2rem;
+}
+
+.header__user--details {
+  min-width: 0rem;
+}
+
+.username {
+  display: none;
+}
+.profile__wrapper {
+  margin: 2rem auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+} */
