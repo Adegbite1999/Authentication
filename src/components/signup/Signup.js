@@ -9,8 +9,45 @@ import github from 'assets/Gihub.svg';
 import { BiLock } from 'react-icons/bi';
 import { HiOutlineMail } from 'react-icons/hi';
 import FormInput from 'Input/Input';
+import useInput from 'hooks/use-input';
+// import { validEmail, validPassword } from 'validation/regex'
 function Index() {
+    const {
+        value: email,
+        valueChangeHandler: emailChangeHandler,
+        blurHandler: emailBlurHandler,
+        resetFields: resetEmail,
+        isInvalid: hasError,
+        Valid: isEmailValid
+    } = useInput(value => value.includes('@'))
+
+    const {
+        value: password,
+        valueChangeHandler: passwordChangeHandler,
+        blurHandler: passwordBlurHandler,
+        resetFields: resetPassword,
+        isInvalid: hasErrorPassword,
+        Valid: isValidPassword
+    } = useInput(value => value.trim().length > 6)
+
+    const formSubmissionHandler = (event) => {
+        event.preventDefault()
+        if (!isValidPassword) {
+            return {}
+        }
+        if (!isEmailValid) {
+            return
+        }
+        window.location.href = '/user/profile'
+        resetEmail()
+        resetPassword()
+
+    }
+
+    const emailError = hasError ? 'invalid' : 'valid';
+    const passwordError = hasErrorPassword ? ' invalid' : 'valid';
     return (
+
         <div className="wrapper">
             <form className="form">
                 <div>
@@ -22,26 +59,33 @@ function Index() {
                     <label htmlFor="email"></label>
                     <span className="input__icon"><HiOutlineMail size={20} color="#828282" /></span>
                     <FormInput
-                        className="input__fields"
+                        className={`input__fields ${emailError}`}
                         id="email"
                         type="email"
                         placeholder='Email'
+                        onChange={emailChangeHandler}
+                        value={email}
+                        onBlur={emailBlurHandler}
                     />
-
+                    {hasError && <p className="text-red">Please include an @ in the email address </p>}
                 </div>
                 <div className="input__field--password input">
                     <label htmlFor="password"></label>
                     <span className="input__icon"><BiLock size={20} color="#828282" /></span>
                     <FormInput
-                        className="input__fields"
+                        className={`input__fields ${passwordError}`}
                         id="password"
                         type="password"
                         placeholder='Password'
-
+                        value={password}
+                        onBlur={passwordBlurHandler}
+                        onChange={passwordChangeHandler}
                     />
+                    {hasErrorPassword && <p className="text-red">Password must be 6 letters</p>}
                 </div>
                 <Link to="/user/profile">
-                    <button className="btn__action">Start coding now </button>
+                    <button onClick={formSubmissionHandler} className="btn__action">Start coding now </button>
+
                 </Link>
 
                 <div className="social__login">

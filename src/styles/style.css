@@ -45,6 +45,18 @@
   border: 1px solid #bdbdbd;
   border-radius: 8px;
 }
+.invalid{
+  outline: 1px solid red;
+}
+.valid{
+  outline: 1px solid#2D9CDB;
+}
+/* .input__fields:focus{
+outline: 1px solid #2D9CDB;
+} */
+.text-red{
+  color:#ff0000;
+}
 input::placeholder {
   font-size: 1.6rem;
   line-height: 2.1;
