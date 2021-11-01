@@ -100,6 +100,40 @@
 /* label {
   color: #4f4f4f;
 } */
-.arrow__back{
+.arrow__back {
   margin-bottom: 1rem;
+}
+.arrow {
+  display: flex;
+  align-items: center;
+  color: #2d9cdb;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+.user__profile--bg {
+  background: url("../assets/user-avatar.png");
+  width: 72px;
+  height: 72px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 8px;
+  position: relative;
+}
+.image__file {
+  transform: translate(0px, 20px);
+  position: absolute;
+  outline: none;
+  width: 100%;
+  z-index: 10;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image__file--icon {
+  top: 1.75rem;
+  position: relative;
+  left: 2.2rem;
 }
