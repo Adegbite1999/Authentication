@@ -56,6 +56,9 @@ outline: 1px solid #2D9CDB;
 } */
 .text-red{
   color:#ff0000;
+  margin-top: .5rem;
+  font-size: 1rem;
+  font-weight: 400;
 }
 input::placeholder {
   font-size: 1.6rem;
@@ -77,6 +80,9 @@ input:focus {
   font-weight: 600;
   background: #2f80ed;
   color: #fff;
+}
+.btn__action:disabled{
+  cursor: not-allowed;
 }
 .social__login {
   text-align: center;

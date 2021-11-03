@@ -1,10 +1,13 @@
+import AuthProvider from "context/AuthContext";
 import React from "react";
 import MainRoutes from "routes/mainRoutes";
 function App() {
   return (
-    <React.Fragment>
-      <MainRoutes />
-    </React.Fragment>
+    <AuthProvider>
+      <React.Fragment>
+        <MainRoutes />
+      </React.Fragment>
+    </AuthProvider>
   );
 }
 
