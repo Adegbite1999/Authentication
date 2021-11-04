@@ -14,7 +14,7 @@ import { useAuth } from 'context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {signInWithGoogle} from 'firebase-config';
+import {signInWithGoogle, signInWithGithub} from 'firebase-config';
 function Index() {
     const {
         value: email,
@@ -141,7 +141,7 @@ function Index() {
                             <button className="social__icon-twitter icon">
                                 <img src={twitter} alt="twitter-logo" />
                             </button>
-                            <button  className="social__icon-github icon">
+                            <button onClick={signInWithGithub}  className="social__icon-github icon">
                                 <img src={github} alt="github-logo" />
                             </button>
                         </div>

@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider,GithubAuthProvider } from 'firebase/auth';
 
 
 
@@ -22,6 +22,22 @@ export const signInWithGoogle = async (event) =>{
   event.preventDefault()
   try {
     const user = await signInWithPopup(auth,googleProvider)
+    if(user){
+      return window.location.href = 'user/profile';
+    }
+  } catch (error) {
+    throw error
+  }
+
+
+}
+
+const githubProvider = new GithubAuthProvider()
+
+export const signInWithGithub = async (event) =>{
+  event.preventDefault()
+  try {
+    const user = await signInWithPopup(auth,githubProvider)
     if(user){
       return window.location.href = 'user/profile';
     }
