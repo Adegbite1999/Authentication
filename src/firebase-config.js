@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 
 
@@ -15,5 +15,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
+
+const googleProvider = new GoogleAuthProvider()
+
+export const signInWithGoogle = async (event) =>{
+  event.preventDefault()
+  try {
+    const user = await signInWithPopup(auth,googleProvider)
+    if(user){
+      return window.location.href = 'user/profile';
+    }
+  } catch (error) {
+    throw error
+  }
+
+
+}
 
 export default app;

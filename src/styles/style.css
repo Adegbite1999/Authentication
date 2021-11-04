@@ -83,6 +83,7 @@ input:focus {
 }
 .btn__action:disabled{
   cursor: not-allowed;
+  background: #78a6e3;
 }
 .social__login {
   text-align: center;
@@ -106,6 +107,8 @@ input:focus {
 }
 .icon {
   cursor: pointer;
+  border: none;
+  background: transparent;
 }
 .input__icon {
   position: relative;

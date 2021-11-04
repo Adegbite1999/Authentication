@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, } from 'react'
 import 'styles/style.css';
 import { Link } from 'react-router-dom';
 import logo from 'assets/devchallenges.svg'
@@ -14,7 +14,7 @@ import { useAuth } from 'context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import {signInWithGoogle} from 'firebase-config';
 function Index() {
     const {
         value: email,
@@ -132,18 +132,18 @@ function Index() {
                     <div className="social__login">
                         <p className="social__caption--intro">Or login with these social profile</p>
                         <div className='social__login--icons'>
-                            <div className="social__icon-google icon">
+                            <button onClick={signInWithGoogle} className="social__icon-google icon">
                                 <img src={google} alt="google-logo" />
-                            </div>
-                            <div className="social__icon-facebook icon">
+                            </button>
+                            <button className="social__icon-facebook icon">
                                 <img src={facebook} alt="facebook-logo" />
-                            </div>
-                            <div className="social__icon-twitter icon">
+                            </button>
+                            <button className="social__icon-twitter icon">
                                 <img src={twitter} alt="twitter-logo" />
-                            </div>
-                            <div className="social__icon-github icon">
+                            </button>
+                            <button  className="social__icon-github icon">
                                 <img src={github} alt="github-logo" />
-                            </div>
+                            </button>
                         </div>
                         <p className="social__caption--sub">Already a member?  <Link to='/login'>Login</Link></p>
                     </div>
@@ -153,4 +153,4 @@ function Index() {
     )
 }
 
-export default Index
+export default  Index
