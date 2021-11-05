@@ -14,6 +14,10 @@ import { useAuth } from 'context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { signInWithPopup } from 'firebase/auth';
+import { auth, googleAuthProvider, githubAuthProvider } from 'firebase-config';
+
+
 function Login() {
 
     const {
@@ -42,7 +46,7 @@ function Login() {
     const history = useHistory()
 
 
-
+    // Submit Handler
     const formSubmissionHandler = async (event) => {
         event.preventDefault()
         if (!isEmailValid && !isValidPassword) {
@@ -59,6 +63,32 @@ function Login() {
             setError(error.message)
         }
         setLoading(false)
+    }
+
+    // GoogleAuth Handler
+    const signInWithGoogle = async (event) => {
+        event.preventDefault()
+        try {
+            const user = await signInWithPopup(auth, googleAuthProvider)
+            if (user) {
+                return history.push('user/profile');
+            }
+        } catch (error) {
+            setError(error.message)
+        }
+    }
+
+    // GithubAuth Handler
+    const signInWithGithub = async (event) => {
+        event.preventDefault()
+        try {
+            const user = await signInWithPopup(auth, githubAuthProvider)
+            if (user) {
+                return history.push('user/profile');
+            }
+        } catch (error) {
+            setError(error.message)
+        }
     }
 
 
@@ -132,7 +162,7 @@ function Login() {
                     <div className="social__login">
                         <p className="social__caption--intro">Or login with these social profile</p>
                         <div className='social__login--icons'>
-                            <button className="social__icon-google icon">
+                            <button onClick={signInWithGoogle} className="social__icon-google icon">
                                 <img src={google} alt="google-logo" />
                             </button>
                             <button className="social__icon-facebook icon">
@@ -141,7 +171,7 @@ function Login() {
                             <button className="social__icon-twitter icon">
                                 <img src={twitter} alt="twitter-logo" />
                             </button>
-                            <button className="social__icon-github icon">
+                            <button onClick={signInWithGithub} className="social__icon-github icon">
                                 <img src={github} alt="github-logo" />
                             </button>
                         </div>
