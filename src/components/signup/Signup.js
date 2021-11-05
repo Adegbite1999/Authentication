@@ -14,7 +14,10 @@ import { useAuth } from 'context/AuthContext';
 import { useHistory } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {signInWithGoogle, signInWithGithub} from 'firebase-config';
+import { signInWithPopup } from 'firebase/auth';
+import { auth, googleAuthProvider, githubAuthProvider } from 'firebase-config';
+
+
 function Index() {
     const {
         value: email,
@@ -41,7 +44,7 @@ function Index() {
     const history = useHistory()
 
 
-
+    // FormSubmission
     const formSubmissionHandler = async (event) => {
         event.preventDefault()
         if (!isEmailValid && !isValidPassword) {
@@ -60,6 +63,31 @@ function Index() {
         setLoading(false)
     }
 
+    // GoogleAuth Handler
+    const signInWithGoogle = async (event) => {
+        event.preventDefault()
+        try {
+            const user = await signInWithPopup(auth, googleAuthProvider)
+            if (user) {
+                return history.push('user/profile');
+            }
+        } catch (error) {
+            setError(error.message)
+        }
+    }
+
+    // GithubAuth Handler
+    const signInWithGithub = async (event) => {
+        event.preventDefault()
+        try {
+            const user = await signInWithPopup(auth, githubAuthProvider)
+            if (user) {
+                return history.push('user/profile');
+            }
+        } catch (error) {
+            setError(error.message)
+        }
+    }
     useEffect(() => {
         if (error) {
             toast.error(error, {
@@ -141,7 +169,7 @@ function Index() {
                             <button className="social__icon-twitter icon">
                                 <img src={twitter} alt="twitter-logo" />
                             </button>
-                            <button onClick={signInWithGithub}  className="social__icon-github icon">
+                            <button onClick={signInWithGithub} className="social__icon-github icon">
                                 <img src={github} alt="github-logo" />
                             </button>
                         </div>
@@ -153,4 +181,4 @@ function Index() {
     )
 }
 
-export default  Index
+export default Index

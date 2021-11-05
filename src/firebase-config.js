@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithPopup, GoogleAuthProvider,GithubAuthProvider } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider,GithubAuthProvider } from 'firebase/auth';
 
 
 
@@ -14,38 +14,42 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = getAuth(app);
-
-const googleProvider = new GoogleAuthProvider()
-
-export const signInWithGoogle = async (event) =>{
-  event.preventDefault()
-  try {
-    const user = await signInWithPopup(auth,googleProvider)
-    if(user){
-      return window.location.href = 'user/profile';
-    }
-  } catch (error) {
-    throw error
-  }
+ const auth = getAuth(app);
+ const githubAuthProvider = new GithubAuthProvider()
+ const googleAuthProvider = new GoogleAuthProvider()
 
 
-}
+export {auth, googleAuthProvider,githubAuthProvider }
 
-const githubProvider = new GithubAuthProvider()
+// const googleAuthProvider = new GoogleAuthProvider()
 
-export const signInWithGithub = async (event) =>{
-  event.preventDefault()
-  try {
-    const user = await signInWithPopup(auth,githubProvider)
-    if(user){
-      return window.location.href = 'user/profile';
-    }
-  } catch (error) {
-    throw error
-  }
+// export const signInWithGoogle = async (event) =>{
+//   event.preventDefault()
+//   try {
+//     const user = await signInWithPopup(auth,googleProvider)
+//     if(user){
+//       return window.location.href = 'user/profile';
+//     }
+//   } catch (error) {
+//     throw error
+//   }
 
 
-}
+// }
+
+
+// export const signInWithGithub = async (event) =>{
+//   event.preventDefault()
+//   try {
+//     const user = await signInWithPopup(auth,githubProvider)
+//     if(user){
+//       return window.location.href = 'user/profile';
+//     }
+//   } catch (error) {
+//     throw error
+//   }
+
+
+// }
 
 export default app;

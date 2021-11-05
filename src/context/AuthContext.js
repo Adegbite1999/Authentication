@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from 'firebase-config';
+
 
 const AuthContext = createContext();
 export function useAuth() {
@@ -12,6 +13,7 @@ const AuthProvider = (props) => {
     const [currentUser, setCurrentUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const [mounted, setMounted] = useState(true)
+    // const [errorAuth, setErrorAuth] = useState(null)
 
     const signUp = async (email, password) => {
         const user = await createUserWithEmailAndPassword(auth, email, password)
@@ -42,11 +44,39 @@ const AuthProvider = (props) => {
         })
     }, [mounted])
 
+    // const signInWithGoogle = async (event) => {
+    //     event.preventDefault()
+    //     try {
+    //         const user = await signInWithPopup(auth, googleAuthProvider)
+    //         if (user) {
+    //             return window.location.href = 'user/profile';
+    //         }
+    //     } catch (error) {
+    //         throw error
+    //     }
+    // }
+//  const signInWithGithub = async (event) =>{
+//   event.preventDefault()
+//   try {
+//     const user = await signInWithPopup(auth,githubAuthProvider)
+//     if(user){
+//       return window.location.href = 'user/profile';
+//     }
+//   } catch (error) {
+//       throw error
+//   }
+// }
+
+
+
     const value = {
         currentUser,
         signUp,
         login,
-        logOut
+        logOut,
+        // signInWithGoogle,
+        // signInWithGithub,
+        // errorAuth
     }
 
 
